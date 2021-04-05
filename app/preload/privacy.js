@@ -125,9 +125,9 @@ const privacyFixes = (w = window) => {
     Object.defineProperty(w.navigator, "plugins", {"value": []})
     Object.defineProperty(w.navigator, "mimeTypes", {"value": []})
     // Don't share the connection information
-    Object.defineProperty(w.navigator, "connection", {})
+    Object.defineProperty(w.navigator, "connection", {"value": {}})
     // Disable the experimental keyboard API, which exposes every key mapping
-    Object.defineProperty(w.navigator, "keyboard", {})
+    Object.defineProperty(w.navigator, "keyboard", {"value": {}})
     // Disable the battery API entirely
     w.navigator.__proto__.getBattery = undefined
     // Always return the cancel action for prompts, without throwing
